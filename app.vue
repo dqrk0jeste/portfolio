@@ -1,5 +1,7 @@
 <template>
   <div>
-    <h1 class="text-4xl">darko</h1>
+    <Header />
+    <NuxtPage />
+    <Footer />
   </div>
 </template>
