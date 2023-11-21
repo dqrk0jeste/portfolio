@@ -1,18 +1,16 @@
 <template>
-  <section id="landing" class="bg-blue-300 flex flex-col justify-center h-screen pl-20">
-    <div class="flex flex-col pl-20 pb- border-solid border-black border-l-4">
-      <span class="title text-9xl font-bold">DARKO NIKOLIC</span>
-      <span class="title text-8xl font-bold">SOFTWARE DEVELOPER</span>
+  <section id="landing" class="relative bg-blue-300 flex flex-col justify-center w-full h-screen md:pl-10 xm:pl-20">
+    <div class="text-center w-full border-solid border-black md:pl-10 xm:pl-20 md:text-left md:border-l-4">
+      <p class="title font-bold whitespace-nowrap text-3xl sm:text-4xl md:text-5xl xm:text-6xl lg:text-8xl xl:text-9xl">DARKO NIKOLIC</p>
+      <p class="title font-bold whitespace-nowrap text-2xl sm:text-3xl md:text-4xl xm:text-5xl lg:text-7xl xl:text-8xl">SOFTWARE DEVELOPER</p>
     </div>
+    <div class="hidden w-1 h-1/2 absolute left:20 top-1/2 bg-black md:block">
+      <div class="absolute top-3/4 -left-8 rotate-90 text-xl flex items-center">
+        <i class='bx bx-chevron-left font-bold'></i>
+        <span class="font-bold">SCROLL</span>
+        <i class='bx bx-chevron-right font-bold'></i>
+      </div>
+    </div>
+    <p class="absolute bottom-0 left-1/2 translate-x-[-50%] font-bold text-lg md:hidden">SCROLL</p>
   </section>
 </template>
-
-<style scoped>
-  .subtitle {
-    background: linear-gradient(to bottom right, #00bfff 20%, #4169e1 40%, #6A0DAD 60%,  #8F00FF 80%, #9400D3 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-  }
-</style>

@@ -8,3 +8,8 @@
   font-family: 'Roboto', Arial;
   box-sizing: border-box;
 }
+
+body {
+  overflow: hidden;
+  transition: all 1s ease;
+}
