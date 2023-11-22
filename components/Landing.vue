@@ -11,6 +11,6 @@
         <i class='bx bx-chevron-right font-bold'></i>
       </div>
     </div>
-    <p class="absolute bottom-0 left-1/2 translate-x-[-50%] font-bold text-lg md:hidden">SCROLL</p>
+    <p class="absolute bottom-0 left-1/2 translate-x-[-50%] font-bold text-lg md:hidden">SWIPE</p>
   </section>
 </template>
