@@ -1,5 +1,5 @@
-<script setup>
-  const open = useState('nav-open', () => false)
+<script setup lang="ts">
+  const open : Ref<boolean> = useState('nav-open', () => false)
 </script>
 
 <template>
