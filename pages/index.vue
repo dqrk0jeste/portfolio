@@ -48,15 +48,16 @@
     }
   })
 
-  watch(count, () => {
-    currentColor.value = pages.value[count.value].color
+  watch(count, (): void => {
+    if(pages.value[count.value].dontShift) return
+    currentColor.value = pages.value[count.value].color || 'white'
   })
 </script>
 
 
 <template>
-  <div id="background" class="transition-color duration-700" :class="currentColor">
-    <div class="transition-all duration-700" :style="`transform: translateY(-${count * 100}vh)`">
+  <div id="background" class="transition-colors duration-700" :class="currentColor">
+    <div class="transition-all duration-700" :style="`transform: translateY(-${ pages[count]?.dontShift ? (count - 1) * 100 : count * 100 }dvh)`">
       <Landing />
       <About />
       <section id="projects">
@@ -88,7 +89,10 @@
         visitLink="https://dqrk0jeste.github.io/blog"
       />
       </section>
-      <MySkills />
+      <div class="transition-all duration-700" :style="`transform: translateY(-${pages[count]?.dontShift ? 100 : 0}dvh)`">
+        <MySkills/>
+        <Footer />
+      </div>
     </div>
   </div>
 </template>

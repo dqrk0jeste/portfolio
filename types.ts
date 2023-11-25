@@ -1,3 +1,4 @@
 export type Page = {
-  color: string
+  color?: string,
+  dontShift?: boolean
 }
