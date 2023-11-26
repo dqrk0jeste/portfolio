@@ -39,10 +39,10 @@
 </script>
 
 <template>
-  <footer class="custom-gradient w-screen h-[100dvh] flex items-center justify-center flex-col gap-8 lg:flex-row lg:gap-10">
+  <footer class="custom-gradient w-screen h-[100dvh] px-5 gap-5 flex items-center justify-center flex-col lg:flex-row">
     <div>
       <h3 class="text-white font-bold text-4xl p-5 max-w-[800px] text-center lg:text-left lg:text-6xl">
-        You have reached the end of my portfolio - but let that be a <span class="text-pink-400">new beginning</span>
+        You have reached the end of my portfolio - but let that be a <span class="text-pink-400">new beginning.</span>
       </h3>
       <div class="hidden justify-center gap-5 lg:ml-[10%] lg:justify-normal lg:flex">
         <a href="https://github.com/dqrk0jeste" target="_blank"><button class="p-3 text-white border-solid border-white border-[1px] rounded-2xl flex items-center justify-center  hover:bg-white/10"><i class='bx bxl-github bx-md'></i></button></a>
@@ -50,7 +50,7 @@
         <a href="mailto:darkonikoloc@gmail.com" target="_blank"><button class="p-3 text-white border-solid border-white border-[1px] rounded-2xl flex items-center justify-center hover:bg-white/10"><i class='bx bx-envelope bx-md'></i></button></a>
       </div>
     </div>
-    <form @submit.prevent="sendEmail" class="basis-2/5 flex flex-col gap-5 items-center lg:items-start">
+    <form @submit.prevent="sendEmail" class="p-5 basis-2/5 flex flex-col gap-5 items-center lg:items-start">
       <h4 class="text-3xl text-white lg:ml-3">Contact me</h4>
       <input v-model="name" name="name" id="name" type="text" placeholder="Your name" class="w-fit px-5 py-3 bg-white/5 border-solid border-white border-[1px] shadow-white rounded-2xl text-white text-md lg:text-lg placeholder:text-gray-200 focus:border-pink-400" required>
       <input v-model="email" name="email" id="email" type="text" placeholder="Your email" class="w-fit px-5 py-3 bg-white/5 border-solid border-white border-[1px] shadow-white rounded-2xl text-white text-md lg:text-lg placeholder:text-gray-200 focus:border-pink-400" required>

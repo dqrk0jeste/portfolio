@@ -4,6 +4,7 @@ export default defineNuxtConfig({
     enabled: true
   },
   modules: [
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@vueuse/nuxt'
   ]
 })

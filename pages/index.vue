@@ -64,7 +64,7 @@
         <Project
           color="bg-blue-900"
           title="PRIVATE LESSONS"
-          desc="Website I have made for personal business I am doing with some of my friends. It's written in Serbian, in cyrillic, but you can translate it into English if interested. Website includes a form for applying and, on the other end, a dashboard for my friends and myself where we can check the aplications."
+          desc="Website I have made for personal business I am doing with some of my friends. It's written in Serbian. On the other end, I have made a dashboard for my friends and myself where we can view and manage the aplications."
           image="/images/privatni-casovi-img.jpg"
           :skills="['Nuxt', 'Vue.js', 'PostgreSQL', 'TailwindCSS', 'Vercel', 'SEO']"
           sourceLink="https://github.com/dqrk0jeste/privatni-casovi"
@@ -73,7 +73,7 @@
         <Project
           color="bg-blue-700"
           title="CUBE W/ FRIENDS"
-          desc="(It may take a bit long to initialy load due to free hosting.) Full-stack web aplication that makes solving Rubik's cubes with your friends easy. You can set up a room in just a few clicks and start solving. Rooms are round-based, everyone solves on the same scrambles and all the updates are in real-time!"
+          desc="Full-stack web aplication that makes solving Rubik's cubes with your friends easy. You can set up a room in just a few clicks and start solving. Rooms are round-based, everyone solves on the same scrambles and all the updates are in real-time!"
           image="/images/cube-w-friends-img.jpg"
           :skills="['Node.js', 'Express', 'Web Sockets', 'Socket.io', 'MongoDB']"
           sourceLink="https://github.com/dqrk0jeste/cube-w-friends"
@@ -82,9 +82,9 @@
         <Project
         color="bg-black"
         title="BLOG."
-        desc="(It may take a bit long to initialy load posts due to free hosting.) Website where anyone can start their own blog. I never really finished it as I didn't like the idea. It mainly served two purposes - 1) wanted it to look pretty and have some cool effects and 2) wanted to learn Vue.js by building it."
+        desc="Website where anyone can start their own blog. I never really finished it as I didn't really like the idea. It mainly served two purposes - 1) to look pretty and 2) for me to learn Vue.js."
         image="/images/blog-img.jpg"
-        :skills="['Vue.js', 'Node.js', 'Express', 'MongoDB', 'Design', 'Github Actions']"
+        :skills="['Vue.js', 'Node.js', 'Express', 'MongoDB', 'Design']"
         sourceLink="https://github.com/dqrk0jeste/blog"
         visitLink="https://dqrk0jeste.github.io/blog"
       />
