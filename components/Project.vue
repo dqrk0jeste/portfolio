@@ -28,7 +28,6 @@
       [image, title, desc, skills],
       (entries: IntersectionObserverEntry[]) => {
         entries.forEach((entry) => {
-          console.log(entries)
           if(entry.isIntersecting) {
             (entry.target as HTMLElement).style.opacity = '1';
             (entry.target as HTMLElement).style.transform = 'translateX(0)';

@@ -39,7 +39,7 @@
 </script>
 
 <template>
-  <footer class="custom-gradient w-screen h-[100dvh] px-5 gap-5 flex items-center justify-center flex-col lg:flex-row">
+  <footer class="custom-gradient w-screen h-[100dvh] px-5 lg:gap-5 flex items-center justify-center flex-col lg:flex-row">
     <div>
       <h3 class="text-white font-bold text-4xl p-5 max-w-[800px] text-center lg:text-left lg:text-6xl">
         You have reached the end of my portfolio - but let that be a <span class="text-pink-400">new beginning.</span>
@@ -50,11 +50,11 @@
         <a href="mailto:darkonikoloc@gmail.com" target="_blank"><button class="p-3 text-white border-solid border-white border-[1px] rounded-2xl flex items-center justify-center hover:bg-white/10"><i class='bx bx-envelope bx-md'></i></button></a>
       </div>
     </div>
-    <form @submit.prevent="sendEmail" class="p-5 basis-2/5 flex flex-col gap-5 items-center lg:items-start">
+    <form @submit.prevent="sendEmail" class="w-full max-w-[500px] p-5 lg:basis-2/5 flex flex-col gap-5 items-center lg:items-start">
       <h4 class="text-3xl text-white lg:ml-3">Contact me</h4>
-      <input v-model="name" name="name" id="name" type="text" placeholder="Your name" class="w-fit px-5 py-3 bg-white/5 border-solid border-white border-[1px] shadow-white rounded-2xl text-white text-md lg:text-lg placeholder:text-gray-200 focus:border-pink-400" required>
-      <input v-model="email" name="email" id="email" type="text" placeholder="Your email" class="w-fit px-5 py-3 bg-white/5 border-solid border-white border-[1px] shadow-white rounded-2xl text-white text-md lg:text-lg placeholder:text-gray-200 focus:border-pink-400" required>
-      <textarea v-model="message" name="message" id="message" rows="3" placeholder="Your message" class="min-w-[280px] w-full resize-y h-[3lh] lg:h-[10lh] px-5 py-2 bg-white/5 border-solid border-white border-[1px] shadow-white rounded-2xl text-white text-md lg:text-lg placeholder:text-gray-200 focus:border-pink-400" @wheel.stop="" @touchstart.stop="" @touchend.stop="" required></textarea>
+      <input v-model="name" name="name" id="name" type="text" placeholder="Your name" class="w-full lg:w-fit px-5 py-3 bg-white/5 border-solid border-white border-[1px] shadow-white rounded-2xl text-white text-md lg:text-lg placeholder:text-gray-200 focus:border-pink-400" required>
+      <input v-model="email" name="email" id="email" type="text" placeholder="Your email" class="w-full lg:w-fit px-5 py-3 bg-white/5 border-solid border-white border-[1px] shadow-white rounded-2xl text-white text-md lg:text-lg placeholder:text-gray-200 focus:border-pink-400" required>
+      <textarea v-model="message" name="message" id="message" rows="3" placeholder="Your message" class="w-full resize-y h-[3lh] lg:h-[10lh] px-5 py-2 bg-white/5 border-solid border-white border-[1px] shadow-white rounded-2xl text-white text-md lg:text-lg placeholder:text-gray-200 focus:border-pink-400" @wheel.stop="" @touchstart.stop="" @touchend.stop="" required></textarea>
       <div class="flex flex-col items-center gap-2 lg:flex-row">
         <button type="submit" class="px-12 py-3 text-lg lg:text-xl text-white font-bold border-solid border-white border-[1px] rounded-full cursor-pointer transition-colors hover:border-white hover:bg-white hover:text-pink-400">Send</button>
         <p v-if="goodUX" class="text-md text-pink-400 text-center lg:text-left">{{ goodUX }}</p>
@@ -63,11 +63,6 @@
         </div></div>
       </div>
     </form>
-    <div class="flex justify-center gap-5 lg:ml-[10%] lg:justify-normal lg:hidden">
-      <a href="https://github.com/dqrk0jeste" target="_blank"><button class="p-3 text-white border-solid border-white border-[1px] rounded-2xl flex items-center justify-center  hover:bg-white/10"><i class='bx bxl-github bx-md'></i></button></a>
-      <a href="https://www.linkedin.com/in/darko-nikolic-99816b296/" target="_blank"><button class="p-3 text-white border-solid border-white border-[1px] rounded-2xl flex items-center justify-center  hover:bg-white/10"><i class='bx bxl-linkedin bx-md'></i></button></a>
-      <a href="mailto:darkonikoloc@gmail.com" target="_blank"><button class="p-3 text-white border-solid border-white border-[1px] rounded-2xl flex items-center justify-center hover:bg-white/10"><i class='bx bx-envelope bx-md'></i></button></a>
-    </div>
   </footer>
 </template>
 

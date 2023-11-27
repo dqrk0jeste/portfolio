@@ -66,6 +66,10 @@
         icon: "<i class='bx bxl-javascript text-4xl md:text-5xl relative group hover:text-5xl md:hover:text-6xl transition-all duration-300'><div class='absolute -top-6 -right-16 text-sm text-black p-1 bg-white rounded-lg opacity-0 transition-all duration-200 group-hover:opacity-100'>JavaScript</div></i>"
       },
       {
+        name: 'TypeScript',
+        icon: "<i class='bx bxl-typescript text-4xl md:text-5xl relative group hover:text-5xl md:hover:text-6xl transition-all duration-300'><div class='absolute -top-6 -right-16 text-sm text-black p-1 bg-white rounded-lg opacity-0 transition-all duration-200 group-hover:opacity-100'>JavaScript</div></i>"
+      },
+      {
         name: 'Vue.js',
         icon: "<i class='bx bxl-vuejs text-4xl md:text-5xl relative group hover:text-5xl md:hover:text-6xl transition-all duration-300'><div class='absolute -top-6 -right-8 text-sm text-black p-1 bg-white rounded-lg opacity-0 transition-all duration-200 group-hover:opacity-100'>Vue.js</div></i>"
       },
@@ -78,7 +82,7 @@
 </script>
 
 <template>
-  <div class="custom-gradient w-screen h-[100dvh] flex flex-col justify-center gap-5 items-center">
+  <div class="custom-gradient w-100% h-[100dvh] flex flex-col justify-center gap-5 items-center">
     <h2 class="text-center text-6xl font-bold text-white py-10">MY STACK</h2>
     <SkillSet :entries="skills.database" color="bg-blue-500"/>
     <SkillSet :entries="skills.backend" color="bg-red-500"/>

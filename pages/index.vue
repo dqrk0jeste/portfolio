@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
   import { type Page } from '../types'
 
   const pages : Ref<Page[]> = useState('pages', () : Array<Page> => [])
@@ -90,7 +89,7 @@
       />
       </section>
       <div class="transition-all duration-700" :style="`transform: translateY(-${pages[count]?.dontShift ? 100 : 0}dvh)`">
-        <MySkills/>
+        <MySkills />
         <Footer />
       </div>
     </div>
