@@ -56,6 +56,7 @@
 
 <template>
   <div id="background" class="transition-colors duration-700" :class="currentColor">
+    <BackgroundCircle />
     <div class="transition-all duration-700" :style="`transform: translateY(-${ pages[count]?.dontShift ? (count - 1) * 100 : count * 100 }dvh)`">
       <Landing />
       <About />
