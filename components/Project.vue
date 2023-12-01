@@ -12,8 +12,10 @@
   })
 
   const pages : Ref<Page[]> = useState('pages')
+  const pageNumber = pages.value.length
   if(process.server) {
     pages.value.push({
+      key: 'project' + pageNumber,
       color: props.color || 'white'
     })
   }
@@ -23,26 +25,38 @@
   const desc: Ref<HTMLElement> = useState('desc' + props.title)
   const skills: Ref<HTMLElement> = useState('skills' + props.title)
 
-    onMounted(() => {
-      useIntersectionObserver(
-      [image, title, desc, skills],
-      (entries: IntersectionObserverEntry[]) => {
-        entries.forEach((entry) => {
-          if(entry.isIntersecting) {
-            (entry.target as HTMLElement).style.opacity = '1';
-            (entry.target as HTMLElement).style.transform = 'translateX(0)';
-          } else {
-            (entry.target as HTMLElement).style.opacity = '0';
-            (entry.target as HTMLElement).style.transform = 'translateX(-50%)';
-          }
-        })
+  onMounted(() => {
+    pages.value.forEach((page, index) => {
+      if(page.key !== 'project' + pageNumber) return;
+      pages.value[index].circle = {
+        color: 'bg-white',
+        position: {
+          top: (image.value.offsetTop - window.innerHeight + image.value.clientWidth / 2 + 5) + 'px',
+          left: (image.value.offsetLeft + image.value.clientWidth / 2) + 'px'
+        },
+        size: image.value.clientWidth + 30 + 'px'
       }
-    )
     })
+    useIntersectionObserver(
+    [image, title, desc, skills],
+    (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if(entry.isIntersecting) {
+          (entry.target as HTMLElement).style.opacity = '1';
+          (entry.target as HTMLElement).style.transform = 'translateX(0)';
+        } else {
+          (entry.target as HTMLElement).style.opacity = '0';
+          (entry.target as HTMLElement).style.transform = 'translateX(-50%)';
+        }
+      })
+    }
+  )
+  })
 
 </script>
 
 <template>
+  {{ pages }}
   <div class="w-screen h-[100dvh] text-white flex flex-col gap-10 items-center justify-center p-5 lg:p-20">
     <div class="flex flex-col gap-5 items-center p-5 max-w-[1400px] lg:flex-row">
       <div ref="image" class="flex-1 transition-all duration-700">

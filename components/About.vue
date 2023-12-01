@@ -1,17 +1,35 @@
 <script setup lang="ts">
   import { type Page } from '../types'
   const pages : Ref<Page[]> = useState('pages')
-  if(process.server) {
-    pages.value.push({
-      color: 'bg-slate-900'
-    })
-  }
-  
+
   const image: Ref<HTMLElement> = useState()
   const mainText: Ref<HTMLElement> = useState()
   const secondaryText: Ref<HTMLElement> = useState()
 
+  const count: Ref<number> = useState('scroll-count')
+
+  if(process.server) {
+    pages.value.push({
+      key: 'about',
+      color: 'bg-slate-900',
+      circle: {
+        color: 'bg-white'
+      }
+    })
+  }
+
   onMounted(() => {
+    pages.value.forEach((page, index) => {
+      if(page.key !== 'about') return;
+      pages.value[index].circle = {
+        color: 'bg-white',
+        position: {
+          top: (image.value.offsetTop - window.innerHeight + image.value.clientWidth / 2 + 5) + 'px',
+          left: (image.value.offsetLeft + image.value.clientWidth / 2) + 'px'
+        },
+        size: image.value.clientWidth + 30 + 'px'
+      }
+    })
     const observer = new IntersectionObserver((entries): void => {
       entries.forEach((entry): void => {
         if(entry.isIntersecting) {
