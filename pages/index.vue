@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import { type Page } from '../types'
 
-  const projectCount = 3
+  const projectCount: Ref<number> = useState('project-count', () => 3)
   const pages : Ref<Page[]> = useState('pages', () : Array<Page> => [])
   const count : Ref<number> = useState('scroll-count', () => 0)
   const currentColor: Ref<string> = useState('current-color', () => 'bg-blue-300')
@@ -56,10 +56,10 @@
 
 
 <template>
-  <div id="background" class="transition-colors duration-700" :class="currentColor">
+  <div id="background" class="transition-colors duration-700 z-0" :class="currentColor">
     <BackgroundCircle />
-    <div v-if="count > 1 && count < 2 + projectCount" class="fixed w-[90%] mx-[5%] h-1 bottom-16 left-0 bg-pink-400 transition-all duration-500"></div>
-    <div class="transition-all duration-700" :style="`transform: translateY(-${ pages[count]?.dontShift ? (count - 1) * 100 : count * 100 }dvh)`">
+    <div v-if="count > 1 && count < 2 + projectCount" class="hidden lg:block fixed w-full h-1 bottom-16 left-0 bg-pink-400 transition-all duration-500 z-[1]"></div>
+    <div class="relative transition-all duration-700 z-10" :style="`transform: translateY(-${ pages[count]?.dontShift ? (count - 1) * 100 : count * 100 }dvh)`">
       <Landing />
       <About />
       <section id="projects">

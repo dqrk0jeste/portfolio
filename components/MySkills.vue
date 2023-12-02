@@ -4,6 +4,7 @@
   const pages : Ref<Page[]> = useState('pages')
   if(process.server) {
     pages.value.push({
+      id: pages.value.length,
       dontShift: true
     })
   }
@@ -75,8 +76,8 @@
 
 <template>
   <div class="custom-gradient w-100% h-[100dvh]">
-    <h2 class="text-center text-6xl font-bold text-white py-5 md:py-10">MY STACK</h2>
-    <div class="w-full flex justify-center items-center text-white text-3xl">
+    <h2 class="text-center text-6xl font-bold text-white py-10">MY STACK</h2>
+    <div class="w-full flex justify-center items-center text-white text-xl md:text-3xl">
       <h3 class="px-5 border-solid border-pink-400 transition-[padding] duration-300 cursor-pointer" :class="selectedSkill === 1 ? 'border-b-2 pb-3' : ''" @click="selectedSkill = 1">Backend</h3>
       <h3 class="px-5 border-solid border-pink-400 transition-[padding] duration-300 cursor-pointer" :class="selectedSkill === 2 ? 'border-b-2 pb-3' : ''" @click="selectedSkill = 2">Databases</h3>
       <h3 class="px-5 border-solid border-pink-400 transition-[padding] duration-300 cursor-pointer" :class="selectedSkill === 3 ? 'border-b-2 pb-3' : ''" @click="selectedSkill = 3">Frontend</h3>

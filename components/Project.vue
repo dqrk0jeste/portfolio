@@ -11,11 +11,14 @@
     visitLink: String
   })
 
+  const projectCount: Ref<number> = useState('project-count')
+
   const pages : Ref<Page[]> = useState('pages')
-  const pageNumber = pages.value.length
+  
   if(process.server) {
     pages.value.push({
-      key: 'project' + pageNumber,
+      id: pages.value.length,
+      key: 'project' + props.title,
       color: props.color || 'white'
     })
   }
@@ -27,14 +30,15 @@
 
   onMounted(() => {
     pages.value.forEach((page, index) => {
-      if(page.key !== 'project' + pageNumber) return;
+      if(page.key !== 'project' + props.title) return;
       pages.value[index].circle = {
-        color: 'bg-white',
+        color: 'bg-pink-400',
+        text: (page.id - 1).toString(),
         position: {
-          top: (image.value.offsetTop - window.innerHeight + image.value.clientWidth / 2 + 5) + 'px',
-          left: (image.value.offsetLeft + image.value.clientWidth / 2) + 'px'
+          top: (window.innerHeight - 64) + 'px',
+          left: window.innerWidth * (page.id - 1) / (projectCount.value + 1) + 'px'
         },
-        size: image.value.clientWidth + 30 + 'px'
+        size: '100px'
       }
     })
     useIntersectionObserver(
@@ -56,7 +60,6 @@
 </script>
 
 <template>
-  {{ pages }}
   <div class="w-screen h-[100dvh] text-white flex flex-col gap-10 items-center justify-center p-5 lg:p-20">
     <div class="flex flex-col gap-5 items-center p-5 max-w-[1400px] lg:flex-row">
       <div ref="image" class="flex-1 transition-all duration-700">

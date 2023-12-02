@@ -10,6 +10,7 @@
 
   if(process.server) {
     pages.value.push({
+      id: pages.value.length,
       key: 'about',
       color: 'bg-slate-900',
       circle: {

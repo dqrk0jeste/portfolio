@@ -5,7 +5,9 @@
 
   const pages : Ref<Page[]> = useState('pages')
   if(process.server) {
-    pages.value.push({})
+    pages.value.push({
+      id: pages.value.length,
+    })
   }
 
   const name: Ref<string> = useState('name')

@@ -3,6 +3,7 @@
   const pages : Ref<Page[]> = useState('pages')
   if(process.server) {
     pages.value.push({
+      id: pages.value.length,
       color: 'bg-blue-300',
       circle: {
         color: 'bg-blue-400',
