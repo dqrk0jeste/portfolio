@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import { type Page } from '../types'
 
-  const projectCount: Ref<number> = useState('project-count', () => 3)
+  const projectCount: Ref<number> = useState('project-count', () => 4)
   const pages : Ref<Page[]> = useState('pages', () : Array<Page> => [])
   const count : Ref<number> = useState('scroll-count', () => 0)
   const currentColor: Ref<string> = useState('current-color', () => 'bg-blue-300')
@@ -71,6 +71,15 @@
           :skills="['Nuxt', 'Vue.js', 'PostgreSQL', 'TailwindCSS', 'Vercel', 'SEO']"
           sourceLink="https://github.com/dqrk0jeste/privatni-casovi"
           visitLink="https://privatni-casovi.vercel.app"
+        />
+        <Project
+          color="bg-purple-900"
+          title="VUE SLIDESHOW"
+          desc="Simple Vue component library for implementing slideshow-like pages like those present here. Available on npm."
+          image="/images/vue-slideshow-library.jpg"
+          :skills="['Vue.js', 'Typescript', 'npm']"
+          sourceLink="https://github.com/dqrk0jeste/vue-slideshow-library"
+          visitLink="https://dqrk0jeste.github.io/vue-slideshow-library-demo"
         />
         <Project
           color="bg-blue-700"

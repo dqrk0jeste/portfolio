@@ -13,6 +13,28 @@
   const direction: Ref<number> = useState('direction', () => -2)
 
   const skills = {
+    core: [
+      {
+        name: 'Java',
+        icon: "/icons/java.png"
+      },
+      {
+        name: 'C',
+        icon: "/icons/c.png"
+      },
+      {
+        name: 'JavaScript',
+        icon: "/icons/javascript.png"
+      },
+      {
+        name: 'TypeScript',
+        icon: "/icons/typescript.png"
+      },
+      {
+        name: 'Git',
+        icon: "/icons/git.png"
+      },
+    ],
     backend: [
       {
         name: 'Node.js',
@@ -23,15 +45,9 @@
         icon: "/icons/nuxt.png"
       },
       {
-        name: 'Java',
-        icon: "/icons/java.png"
+        name: 'Spring',
+        icon: '/icons/java.png'
       },
-      {
-        name: 'C',
-        icon: "/icons/c.png"
-      }
-    ],
-    database: [
       {
         name: 'MongoDB',
         icon: "/icons/mongo.png"
@@ -49,14 +65,6 @@
       {
         name: 'CSS',
         icon:"/icons/css.png"
-      },
-      {
-        name: 'JavaScript',
-        icon: "/icons/javascript.png"
-      },
-      {
-        name: 'TypeScript',
-        icon: "/icons/typescript.png"
       },
       {
         name: 'Vue.js',
@@ -78,14 +86,14 @@
   <div class="custom-gradient w-100% h-[100dvh]">
     <h2 class="text-center text-6xl font-bold text-white py-10">MY STACK</h2>
     <div class="w-full flex justify-center items-center text-white text-xl md:text-3xl">
-      <h3 class="px-5 border-solid border-pink-400 transition-[padding] duration-300 cursor-pointer" :class="selectedSkill === 1 ? 'border-b-2 pb-3' : ''" @click="selectedSkill = 1">Backend</h3>
-      <h3 class="px-5 border-solid border-pink-400 transition-[padding] duration-300 cursor-pointer" :class="selectedSkill === 2 ? 'border-b-2 pb-3' : ''" @click="selectedSkill = 2">Databases</h3>
+      <h3 class="px-5 border-solid border-pink-400 transition-[padding] duration-300 cursor-pointer" :class="selectedSkill === 1 ? 'border-b-2 pb-3' : ''" @click="selectedSkill = 1">Core</h3>
+      <h3 class="px-5 border-solid border-pink-400 transition-[padding] duration-300 cursor-pointer" :class="selectedSkill === 2 ? 'border-b-2 pb-3' : ''" @click="selectedSkill = 2">Backend</h3>
       <h3 class="px-5 border-solid border-pink-400 transition-[padding] duration-300 cursor-pointer" :class="selectedSkill === 3 ? 'border-b-2 pb-3' : ''" @click="selectedSkill = 3">Frontend</h3>
     </div>
     <div>
       <Transition :name="direction < 0 ? 'appearFromRight' : 'appearFromLeft'" mode="out-in">
-        <SkillSet key="backend" v-if="selectedSkill === 1" :entries="skills.backend"/>
-        <SkillSet key="databases" v-else-if="selectedSkill === 2" :entries="skills.database"/>
+        <SkillSet key="core" v-if="selectedSkill === 1" :entries="skills.core"/>
+        <SkillSet key="backend" v-else-if="selectedSkill === 2" :entries="skills.backend"/>
         <SkillSet key="frontend" v-else :entries="skills.frontend"/>
       </Transition>
     </div>
